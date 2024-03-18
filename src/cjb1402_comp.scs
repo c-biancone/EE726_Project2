@@ -1,0 +1,73 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  cjb1402_spring2024_ee726_lib
+* Top Cell Name: sch_proj2_comparator_2v
+* View Name:     schematic
+* Netlisted on:  Feb 26 22:21:56 2024
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: cjb1402_spring2024_ee726_lib
+* Cell Name:    sch_proj2_comparator_2v
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT sch_proj2_comparator_2v CLK OUT_M OUT_P VDD VIN_M VIN_P VSS
+*.PININFO CLK:I OUT_M:I OUT_P:I VDD:I VIN_M:I VIN_P:I VSS:I
+MD3 X1 X1 X1 VDD g45p2svt m=2 l=150n w=320n
+MD4 X2 X2 X2 VDD g45p2svt m=2 l=150n w=320n
+MMI3 O1B O1 VDD VDD g45p2svt m=1 l=150n w=1.16u
+MMI4 O2B O2 VDD VDD g45p2svt m=1 l=150n w=1.16u
+MMPS net2 O1B VDD VDD g45p2svt m=1 l=150n w=640n
+MMS8 net2 CLK VDD VDD g45p2svt m=1 l=150n w=640n
+MMS7 net5 CLK VDD VDD g45p2svt m=1 l=150n w=640n
+MMPR net5 O2B VDD VDD g45p2svt m=1 l=150n w=640n
+MM19 QB Q net2 VDD g45p2svt m=1 l=150n w=640n
+MM18 Q QB net5 VDD g45p2svt m=1 l=150n w=640n
+MMI8 OUT_P QB VDD VDD g45p2svt m=2 l=150n w=1.16u
+MMI7 OUT_M Q VDD VDD g45p2svt m=2 l=150n w=1.16u
+MMS4 X2 CLK VDD VDD g45p2svt m=2 l=1u w=1.06u
+MMS2 O2 CLK VDD VDD g45p2svt m=2 l=150n w=320n
+MMS1 O1 CLK VDD VDD g45p2svt m=2 l=150n w=320n
+MMS3 X1 CLK VDD VDD g45p2svt m=2 l=1u w=1.06u
+MM7 O1 O2 VDD VDD g45p2svt m=1 l=150n w=640n
+MM8 O2 O1 VDD VDD g45p2svt m=1 l=150n w=640n
+MM4 tail VIN_P X2 VDD g45p2svt m=1 l=1u w=640n
+MM3 tail VIN_M X1 VDD g45p2svt m=1 l=1u w=640n
+MD6 X2 X2 X2 VSS g45n2svt m=2 l=150n w=320n
+MD5 X1 X1 X1 VSS g45n2svt m=2 l=150n w=320n
+MDTAIL VSS VSS VSS VSS g45n2svt m=2 l=150n w=320n
+MD1 tail tail tail VSS g45n2svt m=4 l=150n w=320n
+MMI1 O1B O1 VSS VSS g45n2svt m=1 l=150n w=640n
+MMI2 O2B O2 VSS VSS g45n2svt m=1 l=150n w=640n
+MMNS QB O1B net3 VSS g45n2svt m=1 l=150n w=640n
+MMNR Q O2B net4 VSS g45n2svt m=1 l=150n w=640n
+MMNQ QB Q VSS VSS g45n2svt m=1 l=150n w=640n
+MMNQB Q QB VSS VSS g45n2svt m=1 l=150n w=640n
+MMS6 net3 CLK VSS VSS g45n2svt m=1 l=150n w=640n
+MMS5 net4 CLK VSS VSS g45n2svt m=1 l=150n w=640n
+MMI6 OUT_P QB VSS VSS g45n2svt m=2 l=150n w=640n
+MMI5 OUT_M Q VSS VSS g45n2svt m=2 l=150n w=640n
+MMTAIL tail CLK VSS VSS g45n2svt m=1 l=150n w=1.92u
+MM6 O2 O1 X2 VSS g45n2svt m=1 l=150n w=1.92u
+MM5 O1 O2 X1 VSS g45n2svt m=1 l=150n w=1.92u
+MM2 X2 VIN_M tail VSS g45n2svt m=2 l=1u w=640n
+MM1A X1 O2 tail VSS g45n2svt m=2 l=1u w=320n
+MM2A X2 O1 tail VSS g45n2svt m=2 l=1u w=320n
+MM1 X1 VIN_P tail VSS g45n2svt m=2 l=1u w=640n
+.ENDS
+
